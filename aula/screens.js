@@ -624,7 +624,7 @@ window.AulaScreens = (function () {
     renderProgreso(host, AP.load());
   }
 
-  /* ===================== PANTALLA: MIS BADGES ===================== */
+  /* ===================== PANTALLA: MIS LOGROS ===================== */
   function achUnlocked(a, s) {
     if (typeof a.unlocked === 'function') return a.unlocked(s);
     if (AP.isAchievementUnlocked) { try { return AP.isAchievementUnlocked(a, s); } catch (e) {} }
@@ -647,7 +647,7 @@ window.AulaScreens = (function () {
       '<div class="bd">' +
         '<header class="pr-hero">' +
           '<span class="mi-eyebrow">Logros</span>' +
-          '<h1 class="mi-title">Mis badges</h1>' +
+          '<h1 class="mi-title">Mis logros</h1>' +
           '<p class="mi-desc">Insignias que vas desbloqueando al avanzar en el recorrido. Llevás <b>' + got + ' de ' + list.length + '</b>.</p>' +
         '</header>' +
         '<div class="bd-grid">' + cards + '</div>' +
@@ -656,7 +656,7 @@ window.AulaScreens = (function () {
   function initBadges() {
     var host = document.querySelector('[data-badges]');
     if (!host || !AP || !CFG) return;
-    document.title = 'Mis badges — ' + CFG.name;
+    document.title = 'Mis logros — ' + CFG.name;
     renderBadges(host, AP.load());
   }
 

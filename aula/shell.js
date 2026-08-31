@@ -176,9 +176,7 @@ window.AulaShell = (function () {
       '<div class="sb-badge" data-sb-badge></div>' +
       '<div class="sb-scroll">' +
         '<a href="' + esc(CFG.links.progreso) + '" class="sb-item" data-nav="progreso">' + IC.progreso + '<span class="lbl">Mi progreso</span></a>' +
-        '<a href="' + esc(CFG.links.badges)   + '" class="sb-item" data-nav="badges">' + IC.badges   + '<span class="lbl">Mis badges</span></a>' +
-        '<div class="sb-div"></div>' +
-        '<a href="' + esc(CFG.links.rutas)    + '" class="sb-item" data-nav="rutas">' + IC.rutas    + '<span class="lbl">Rutas de aprendizaje</span></a>' +
+        '<a href="' + esc(CFG.links.badges)   + '" class="sb-item" data-nav="badges">' + IC.badges   + '<span class="lbl">Mis logros</span></a>' +
         '<div class="sb-section-gap"></div>' +
         '<div data-sb-tree></div>' +
       '</div>' +
@@ -223,7 +221,7 @@ window.AulaShell = (function () {
       return [{ label: CFG.name, href: courseHref }, { label: 'Mi progreso', current: true }];
     }
     if (loc.scope === 'badges') {
-      return [{ label: CFG.name, href: courseHref }, { label: 'Mis badges', current: true }];
+      return [{ label: CFG.name, href: courseHref }, { label: 'Mis logros', current: true }];
     }
     if (loc.scope === 'final') {
       return [{ label: CFG.name, href: courseHref }, { label: (CFG.final && CFG.final.label) || 'Evaluación final', current: true }];
@@ -346,7 +344,7 @@ window.AulaShell = (function () {
     renderTopbar(s, loc);
     renderTree(els.tree, s, loc);
     wireTree(els.tree);
-    // resaltar el acceso activo (Mi progreso / Mis badges)
+    // resaltar el acceso activo (Mi progreso / Mis logros)
     if (els.aside) Array.prototype.forEach.call(els.aside.querySelectorAll('.sb-item[data-nav]'), function (a) {
       a.classList.toggle('is-active', a.getAttribute('data-nav') === loc.scope);
     });

@@ -1,9 +1,9 @@
 {
-  "name": "aula-especializate",
+  "name": "aula-especializate-lti-backend",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Aula interactiva de Especializate detrás de un gateway de autenticación LTI 1.3 con Moodle. Valida el lanzamiento en backend, crea la sesión y sirve el aula estática sin modificarla.",
+  "description": "Aula Especializate — Proyecto B (desarrollo): frontend + integración LTI 1.3 + backend con persistencia centralizada del progreso (ProgressStore / /api/progress).",
   "engines": {
     "node": ">=18.17"
   },

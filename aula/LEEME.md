@@ -21,7 +21,7 @@ unidad.html         <- Pantalla de unidad        (plantilla unica, lee ?m=N&u=K)
 cuestionario.html   <- Cierre del modulo (cuestionario final del modulo, ?m=N)
 final.html          <- Evaluacion final + certificacion del curso
 progreso.html       <- Mi progreso (dashboard)
-badges.html         <- Mis badges (insignias)
+badges.html         <- Mis logros (insignias)
 
 course.config.js    <- * CONTENIDO DEL CURSO (fuente unica, editable)
 progress.js         <- logica de avance/XP/insignias (fuente de verdad - NO tocar salvo necesidad)

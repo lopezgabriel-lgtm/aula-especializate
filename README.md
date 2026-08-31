@@ -1,9 +1,19 @@
-# Aula Especializate — Gateway LTI 1.3
+# Aula Especializate — Proyecto B · LTI + backend (desarrollo)
 
-Aula interactiva de Especializate detrás de un **gateway de autenticación LTI 1.3**
-con Moodle. El gateway (Node.js + Express) valida el lanzamiento LTI **en el
-backend**, crea una sesión server-side y **sirve el aula estática sin modificarla**.
-No hay login propio: la única forma de entrar es el lanzamiento desde Moodle.
+Versión de **desarrollo** del aula: frontend completo + **integración LTI 1.3**
+con Moodle + **backend con persistencia centralizada del progreso**. Es la versión
+sobre la que se continúa evolucionando la arquitectura de backend.
+
+El gateway (Node.js + Express) valida el lanzamiento LTI **en el backend**, crea
+una sesión server-side y **sirve el aula sin modificarla**. El progreso se guarda
+y recupera vía backend (`/api/progress` → `ProgressStore`), con `localStorage`
+usado **solo como caché local** (no como fuente de verdad).
+
+> Fuente de verdad del progreso: **backend / almacenamiento del `ProgressStore`**.
+> Este proyecto es autocontenido e independiente del Proyecto A.
+
+La validación criptográfica la hace [`jose`](https://github.com/panva/jose)
+(librería JOSE estándar); no hay criptografía artesanal.
 
 ---
 

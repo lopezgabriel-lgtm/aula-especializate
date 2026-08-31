@@ -1565,7 +1565,7 @@ body.tour-open .tour-fab, body.modal-open .tour-fab { display: none; }
 .sb-badge-fill{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--mint),var(--mint-bright));transition:width .45s ease}
 .sb-badge-pct{color:var(--mint-bright);font-size:.74rem;font-weight:700;flex:none}
 
-/* items simples (Mi progreso / Mis badges / Rutas) */
+/* items simples (Mi progreso / Mis logros) */
 .sb-item{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:10px 12px;border-radius:10px;
   color:var(--sb-text);font-size:.92rem;font-weight:500;background:transparent;border:0;cursor:pointer;text-decoration:none;transition:.13s}
 .sb-item:hover{background:var(--sb-hover);color:#fff}
@@ -1964,7 +1964,7 @@ a.pr-mod:hover{border-color:var(--mint);transform:translateY(-1px)}
 .pr-chip.is-open{background:#eaf3ff;color:#2f6fb3}
 .pr-chip.is-locked{background:var(--grey-light);color:var(--text-muted)}
 
-/* Mis badges: grilla */
+/* Mis logros: grilla */
 .bd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
 .bd-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;box-shadow:var(--shadow);
   display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
