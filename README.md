@@ -5,9 +5,6 @@ con Moodle. El gateway (Node.js + Express) valida el lanzamiento LTI **en el
 backend**, crea una sesión server-side y **sirve el aula estática sin modificarla**.
 No hay login propio: la única forma de entrar es el lanzamiento desde Moodle.
 
-La validación criptográfica la hace [`jose`](https://github.com/panva/jose)
-(librería JOSE estándar); no hay criptografía artesanal.
-
 ---
 
 ## Estructura
