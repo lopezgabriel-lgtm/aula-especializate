@@ -12,11 +12,6 @@ usado **solo como caché local** (no como fuente de verdad).
 > Fuente de verdad del progreso: **backend / almacenamiento del `ProgressStore`**.
 > Este proyecto es autocontenido e independiente del Proyecto A.
 
-La validación criptográfica la hace [`jose`](https://github.com/panva/jose)
-(librería JOSE estándar); no hay criptografía artesanal.
-
----
-
 ## Estructura
 
 ```
