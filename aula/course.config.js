@@ -841,7 +841,7 @@ window.COURSE_CONFIG = {
     "label": "Evaluación final",
     "href": "final.html",
     "description": "La evaluación final integra todo el recorrido. Se habilita al completar los cinco módulos y, al aprobarla, activás tu certificación.",
-    "quizUrl": "",
+    "quizUrl": "https://aulasvirtuales.bue.edu.ar/mod/quiz/view.php?id=979585",
     "certUrl": ""
   }
 };
