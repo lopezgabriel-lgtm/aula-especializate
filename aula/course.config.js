@@ -573,7 +573,7 @@ window.COURSE_CONFIG = {
               "type": "Actividad interactiva",
               "label": "Actividad de repaso",
               "required": false,
-              "url": "https://gamma.app/docs/Unidad-41-Como-estructurar-informacion-con-IA-listas-pasos-y-ta-wqar5pvfudz3fhj"
+              "url": "https://view.genially.com/695e622ac5550385d03513e5"
             }
           ]
         },
@@ -607,7 +607,7 @@ window.COURSE_CONFIG = {
               "type": "Actividad interactiva",
               "label": "Actividad de repaso",
               "required": false,
-              "url": "https://gamma.app/docs/Unidad-42-Pensar-en-datos-operativos-fu67g3tbs5j810m"
+              "url": "https://view.genially.com/695f96d43c93c2f7faca0086"
             }
           ]
         },
@@ -641,7 +641,7 @@ window.COURSE_CONFIG = {
               "type": "Actividad interactiva",
               "label": "Actividad de repaso",
               "required": false,
-              "url": "https://gamma.app/docs/Unidad-43-Identificacion-de-tareas-repetitivas-y-procesos-vhue3ukk0y25kjv"
+              "url": "https://view.genially.com/695fb86135030ee507a51ae9"
             }
           ]
         },
@@ -675,7 +675,7 @@ window.COURSE_CONFIG = {
               "type": "Actividad interactiva",
               "label": "Actividad de repaso",
               "required": false,
-              "url": "https://gamma.app/docs/Unidad-44-IA-como-apoyo-para-pensar-mejor-crc7m2fsmxr41bt"
+              "url": "https://view.genially.com/695ff6792011660d48c528fa"
             }
           ]
         }

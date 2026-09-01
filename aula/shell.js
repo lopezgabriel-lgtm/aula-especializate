@@ -117,8 +117,12 @@ window.AulaShell = (function () {
     mail:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
     chevron:  '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>',
     collapse: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>',
-    burger:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'
+    burger:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>',
+    final:    '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 1-1h13l-2.5 4L18 11H5"/></svg>',
+    cert:     '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>'
   };
+  function finalHref() { return (CFG && CFG.final && CFG.final.href) || 'final.html'; }
+  function certUrl() { return (CFG && CFG.final && CFG.final.certUrl) || ''; }
   function markerFor(state) {
     if (state === 'completed') return '<span class="marker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>';
     if (state === 'in-progress') return '<span class="marker"><span class="dot"></span></span>';
@@ -177,6 +181,9 @@ window.AulaShell = (function () {
       '<div class="sb-scroll">' +
         '<a href="' + esc(CFG.links.progreso) + '" class="sb-item" data-nav="progreso">' + IC.progreso + '<span class="lbl">Mi progreso</span></a>' +
         '<a href="' + esc(CFG.links.badges)   + '" class="sb-item" data-nav="badges">' + IC.badges   + '<span class="lbl">Mis logros</span></a>' +
+        '<div class="sb-div"></div>' +
+        '<a href="' + esc(finalHref()) + '" class="sb-item" data-nav="final">' + IC.final + '<span class="lbl">Evaluación final</span></a>' +
+        (certUrl() ? '<a href="' + esc(certUrl()) + '" class="sb-item" target="_blank" rel="noopener" data-nav="cert">' + IC.cert + '<span class="lbl">Descargá tu certificado</span></a>' : '') +
         '<div class="sb-section-gap"></div>' +
         '<div data-sb-tree></div>' +
       '</div>' +

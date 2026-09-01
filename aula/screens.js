@@ -486,6 +486,19 @@ window.AulaScreens = (function () {
   }
 
   /* ===================== PANTALLA: CUESTIONARIO / CIERRE DE MÓDULO ===================== */
+  function finalHref() { return (CFG && CFG.final && CFG.final.href) || 'final.html'; }
+  // Componente llamativo: invita a la Evaluación final tras el último módulo.
+  function finalInvite() {
+    return '<div class="cq-final-invite">' +
+      '<span class="cq-fi-ic">' + IC.award + '</span>' +
+      '<div class="cq-fi-tx">' +
+        '<h2>¡Completaste todos los módulos!</h2>' +
+        '<p>Te queda un último desafío para finalizar tu recorrido: la <b>Evaluación final</b>.</p>' +
+      '</div>' +
+      '<a class="btn cq-fi-btn" href="' + esc(finalHref()) + '">' + IC.arrow + ' Realizar evaluación final</a>' +
+    '</div>';
+  }
+
   function renderCuestionario(host, s, mod, n) {
     var st = quizState(s, n);
     if (st === 'locked') {
@@ -510,10 +523,11 @@ window.AulaScreens = (function () {
         (mod.quizUrl ? '<a class="ub-open btn cq-open" href="' + esc(mod.quizUrl) + '" target="_blank" rel="noopener" data-quiz-visit>Ir al cuestionario ' + IC.ext + '</a>' : '') +
       '</div>';
 
+    var lastDone = done && !next; // último módulo aprobado → invitar a la evaluación final
     var cta = done
       ? (next
           ? '<a class="btn btn-complete" href="modulo.html?m=' + (n + 1) + '">' + IC.arrow + ' Continuar al Módulo ' + (n + 1) + '</a>'
-          : '<span class="ini-done">' + IC.checkC + ' ¡Completaste todos los módulos!</span>')
+          : '')
       : '<button type="button" class="btn btn-complete" data-close-module ' + (visited ? '' : 'disabled') + '>' + IC.checkC + ' Marcar como aprobado y cerrar el módulo</button>';
 
     host.innerHTML =
@@ -528,6 +542,7 @@ window.AulaScreens = (function () {
           '<div class="ub-right"><div class="cq-badge ' + (done ? 'is-done' : 'is-open') + '">' + (done ? IC.checkC + ' Completado' : IC.quiz + ' Disponible') + '</div></div>' +
         '</div>' +
         quizCard +
+        (lastDone ? finalInvite() : '') +
         '<div class="ub-cta">' +
           '<div class="mi-note">' + IC.info + '<span>' + (done ? 'Cuestionario aprobado. El módulo quedó <b>completado</b>.' : 'Primero <b>abrí el cuestionario</b> en Moodle; después vas a poder marcarlo como aprobado.') + '</span></div>' +
           '<div class="ub-cta-actions">' + cta + '</div>' +
@@ -675,6 +690,11 @@ window.AulaScreens = (function () {
 
   function renderFinal(host, s) {
     var F = CFG.final || {};
+    var closing = {
+      title:     F.closingTitle   || '¡Felicitaciones!',
+      message:   F.closingMessage || 'Completaste tu recorrido por el curso.',
+      certLabel: F.certLabel      || 'Descargá tu certificado'
+    };
     var st = finalState(s);
 
     if (st === 'locked') {
@@ -694,14 +714,14 @@ window.AulaScreens = (function () {
           '<div class="fn-hero">' +
             '<span class="fn-medal">' + IC.award + '</span>' +
             '<span class="mi-eyebrow">Cierre del curso</span>' +
-            '<h1 class="mi-title">¡Completaste el curso!</h1>' +
-            '<p class="mi-desc">Terminaste todos los módulos y aprobaste la evaluación final. Tu certificación ya está disponible.</p>' +
+            '<h1 class="mi-title">' + esc(closing.title) + '</h1>' +
+            '<p class="mi-desc">' + esc(closing.message) + '</p>' +
           '</div>' +
           '<div class="cq-card fn-cert">' +
             '<span class="cq-card-ic">' + IC.award + '</span>' +
             '<div class="cq-card-tx"><b>Tu certificación</b><span>Se descarga desde Moodle, con tu cuenta del aula virtual.</span></div>' +
             (F.certUrl
-              ? '<a class="ub-open btn cq-open" href="' + esc(F.certUrl) + '" target="_blank" rel="noopener">Descargar certificado ' + IC.ext + '</a>'
+              ? '<a class="ub-open btn cq-open" href="' + esc(F.certUrl) + '" target="_blank" rel="noopener">' + esc(closing.certLabel) + ' ' + IC.ext + '</a>'
               : '<span class="fn-pending">Falta cargar el enlace del certificado (certUrl en course.config.js).</span>') +
           '</div>' +
         '</div>';
